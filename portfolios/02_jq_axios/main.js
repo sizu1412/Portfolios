@@ -12,16 +12,24 @@ $(document).ready(()=>{
 		res.data.text().then(str=>{
 			let arr = JSON.parse(str);// JSONオブジェクトに変換
 			console.log(arr);// データ確認
-			console.log(arr[0]["publishingOffice"]);
-			console.log(arr[0]["reportDatetime"]);
-			console.log(arr[0]["timeSeries"][0]);
-			//東京地方
-			console.log(arr[0]["timeSeries"][0]["areas"][0]["area"]["name"]);
-			console.log(arr[0]["timeSeries"][0]["waves"]);
-			console.log(arr[0]["timeSeries"]);
-			console.log(arr[0]["timeSeries"]);
-			//伊豆諸島北部
-			console.log(arr[0]["timeSeries"][0]["areas"][1]["area"]["name"]);
+			console.log(arr[0]);// 0番目のデータ
+			console.log(arr[0]["publishingOffice"]);// 気象庁
+			console.log(arr[0]["reportDatetime"]);// 発令された日時
+			console.log(arr[0]["timeSeries"][0]);// 0番目のデータ
+			// 東京地方
+			console.log(arr[0]["timeSeries"][0]["areas"][0]["area"]["name"]);// 東京地方
+			console.log(arr[0]["timeSeries"][0]);// TODO:0.5メートル
+			console.log(arr[0]["timeSeries"][0]);// TODO:晴れ　時々　くもり
+			console.log(arr[0]["timeSeries"][0]);// TODO:南西の風
+			// TODO:伊豆諸島北部
+			console.log(arr[0]["timeSeries"][0]["areas"][1]["area"]["name"]);// 伊豆諸島北部
+			// TODO:伊豆諸島南部
+			// TODO:小笠原諸島
+
+			// TODO: 東京地方の今日の天気を、HTMLに表示する!!(jQuery使ってね)
+			// TODO: 東京地方の今日の天気を、天気アイコンで表示する!!(jQuery使ってね)
+
+
 
 		});
 	}).catch(err=>{
