@@ -4,18 +4,18 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Portfolios</title>
+	<title>Research</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
-	<h1>Portfolios</h1>
-	<ol>
-		<li><a href="./portfolios/app01/">ポン出しくん</a></li>
-		<li><a href="./portfolios/app02/">お天気くん</a></li>
-		<li><a href="./portfolios/app03/">xxくん</a></li>
-	</ul>
-
+	<form oninput="bmi.value = Number(w.value) / (Number(h.value));">
+		価格<input type="number" name="w" id="w" value="0" size="5">（円）
+		<br>
+		人数<input type="number" name="h" id="h" value="0" size="5"> （人）
+		<br>
+		一人当たりの金額<output name="bmi" for="w h">0</output>
+	  </form>
 	<!-- JavaScript -->
 	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
