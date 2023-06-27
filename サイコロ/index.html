@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>サイコロ</title>
+  <style>
+    .dice {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border: 1px solid #000;
+      margin: 10px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="addDice()">サイコロを追加</button>
+  <button onclick="removeDice()">サイコロを削除</button>
+  <button onclick="rollDice()">サイコロを振る</button>
+  <button onclick="resetDice()">結果をリセット</button>
+  <div id="diceContainer"></div>
+
+  <script>
+    var diceCount = 0;
+
+    function addDice() {
+      diceCount++;
+      var diceDiv = document.createElement("div");
+      diceDiv.className = "dice";
+      diceDiv.id = "dice" + diceCount;
+      document.getElementById("diceContainer").appendChild(diceDiv);
+    }
+
+    function removeDice() {
+      if (diceCount > 0) {
+        var diceDiv = document.getElementById("dice" + diceCount);
+        diceDiv.parentNode.removeChild(diceDiv);
+        diceCount--;
+      }
+    }
+
+    function rollDice() {
+      for (var i = 1; i <= diceCount; i++) {
+        var diceResult = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("dice" + i).textContent = diceResult;
+
+        var resultDiv = document.createElement("div");
+        resultDiv.id = "result" + i;
+        resultDiv.textContent = "サイコロ" + i + "の結果: " + diceResult;
+        document.getElementById("diceContainer").appendChild(resultDiv);
+      }
+    }
+
+    function resetDice() {
+      for (var i = 1; i <= diceCount; i++) {
+        document.getElementById("dice" + i).textContent = "";
+        var resultDiv = document.getElementById("result" + i);
+        if (resultDiv) {
+          resultDiv.parentNode.removeChild(resultDiv);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
