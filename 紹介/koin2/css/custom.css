@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.coin {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd; /* デフォルトの背景色 */
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.red-coin {
+  background-color: #ff0000; /* 赤い色 */
+}
+
+.blue-coin {
+  background-color: #0000ff; /* 青い色 */
+}
